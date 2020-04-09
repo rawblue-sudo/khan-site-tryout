@@ -2,24 +2,25 @@
 module.exports = {
   apps: [
     {
-      name: 'meetup',
-      script: 'bin/www',
+      name: "meetup",
+      script: "bin/www",
       env_production: {
-        NODE_ENV: 'production',
+        NODE_ENV: "production",
       },
     },
   ],
   deploy: {
     production: {
-      user: 'nodejs',
-      host: '<CHANGE_TO_YOUR_HOST>',
-      ref: 'origin/master',
-      repo: '<CHANGE_TO_YOUR_GITHUB_REPO>',
+      user: "jo",
+      host: "64.227.66.221",
+      ref: "origin/master",
+      repo: "https://github.com/rawblue-sudo/khan-site.git",
 
       // Make sure this directory exists on your server or change this entry to match your directory structure
-      path: '/home/nodejs/deploy',
+      path: "/home/jo/deploy",
 
-      'post-deploy': 'cp ../.env ./ && npm install && pm2 startOrRestart ecosystem.config.js --env production',
+      "post-deploy":
+        "cp ../.env ./ && npm install && pm2 startOrRestart ecosystem.config.js --env production",
     },
   },
 };
